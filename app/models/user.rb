@@ -10,6 +10,7 @@ class User < ApplicationRecord
   end
 
   private
+
   def init
     self.posts_counter ||= 0 # will set the default value only if it's nil
   end
