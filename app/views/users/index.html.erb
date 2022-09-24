@@ -1,1 +1,9 @@
-<h3>users/index</h3>
+<div id="user-list">
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= render "users/user_tile", user: user%>
+      </li>
+    <%end%>
+  </ul>
+</div>

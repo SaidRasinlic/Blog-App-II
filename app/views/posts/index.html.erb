@@ -1,1 +1,12 @@
-<h3>posts/index</h3>
+<% stylesheet_link_tag 'posts/index' %>
+<div id="all-posts-page" class="content">
+  <%= render 'users/user_tile', user: @user %>
+  <ul>
+    <% @all_posts.each do |post| %>
+      <li>
+        <%= render 'posts/post_tile', post: post, user: @user %>
+        <%= render 'posts/comments_tile', comments: post.comments %>
+      </li>
+    <% end %>
+  </ul>
+</div>
