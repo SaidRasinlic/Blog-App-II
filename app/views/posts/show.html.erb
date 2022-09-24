@@ -1,1 +1,4 @@
-<h3>posts/show</h3>
+<div id="post-page" class="content">
+  <%= render 'posts/expanded_post_tile', post: @post %>
+  <%= render 'posts/comments_tile', comments: @post.comments %>
+</div>

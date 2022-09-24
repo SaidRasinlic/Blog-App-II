@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  /* margin: 5%; */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  font-size: large;
+  color: black;
+  text-decoration: none;
+}

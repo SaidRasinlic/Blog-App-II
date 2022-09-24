@@ -1,0 +1,19 @@
+<% stylesheet_link_tag 'posts/expanded_post_tile' %>
+<div id="expanded-post-tile">
+  <div id="post-data">
+    <h2>Post #<%= post.id %> by <%= @user.name %></h2>
+    <div id="comments-likes">
+      <p>Comments <%= post.comments_counter || 0 %></p>
+      <p>Likes <%= post.likes_counter || 0 %></p>
+    </div>
+  </div>
+  <p><%= post.text %></p>
+  <div id="like-n-comment">
+    <%= link_to new_user_post_comment_path(@user, @post) do %>
+      <button class="custom-button">Comment</button>
+    <% end %>
+    <%= form_with model: Like.new, url: user_post_likes_path(@user, @post), method: :post do %>
+      <button class="custom-button">Like</button>
+    <% end %>
+  </div>
+</div>

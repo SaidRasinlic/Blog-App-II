@@ -1,0 +1,18 @@
+#comments-tile {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  border: 3px solid black;
+  border-top: none;
+  margin: 0 150px 20px;
+  padding: 10px 20px;
+}
+
+.commenter {
+  font-weight: bold;
+  font-style: italic;
+  margin: 0;
+}
+
+#comment {
+  font-style: italic;
+}

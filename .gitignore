@@ -24,6 +24,8 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+/node_modules
+/package-lock.json
 
 /public/assets
 

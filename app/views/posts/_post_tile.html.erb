@@ -1,0 +1,11 @@
+<% stylesheet_link_tag 'posts/post_tile' %>
+<%= link_to user_post_path(user, post) do %>
+  <div id="post-tile">
+    <h3>Post #<%= post.id %></h3>
+    <p id="post-text"><%= post.text %></p>
+    <div id="comments-likes">
+      <p>Comments: <%= post.comments_counter %></p>
+      <p>Likes: <%= post.likes_counter%></p>
+    </div>
+  </div>
+<% end %>

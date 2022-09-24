@@ -1,0 +1,14 @@
+<% stylesheet_link_tag 'posts/comments_tile' %>
+<div id="comments-tile">
+  <ul>
+    <% post.recent_comments.each do |comment| %>
+      <li>
+        <p class="commenter"><%= comment.author.name %>:</p>
+        <p id="comment"><%= comment.text %></p>
+      </li>
+    <% end %>
+  </ul>
+  <% if post.recent_comments.length == 0 %>
+    <p class="commenter" >No Comments yet</p>
+  <% end %>
+</div>
