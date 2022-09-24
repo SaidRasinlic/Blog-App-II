@@ -42,3 +42,18 @@ a {
   color: black;
   text-decoration: none;
 }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#all-posts-btn {
+  align-self: center;
+}
+
+.button-container button:active,
+#all-posts-btn button:active {
+  color: #000;
+}

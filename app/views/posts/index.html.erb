@@ -1,5 +1,10 @@
 <div id="all-posts-page" class="content">
   <%= render 'users/user_tile', user: @user %>
+  <div class="button-container">
+    <%= link_to new_user_post_path(@user) do %>
+      <button>Create a new post</button>
+    <% end %>
+  </div>
   <ul>
     <% @all_posts.each do |post| %>
       <li>

@@ -1,6 +1,11 @@
 <% stylesheet_link_tag 'users/show' %>
 <div id="per-user-details">
   <%= render "users/user_tile", user: @user%>
+  <div class="button-container">
+    <%= link_to new_user_post_path(@user) do %>
+      <button>Create a new post</button>
+    <% end %>
+  </div>
   <div id="bio">
     <h2>Bio:</h2>
     <p><%=@user.bio %></p>

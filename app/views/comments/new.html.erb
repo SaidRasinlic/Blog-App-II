@@ -1,0 +1,7 @@
+<div id="add-new-page" class="content">
+  <h1>Create a New Comment</h1>
+  <%= form_with model: comment, url: user_post_comments_path(@user, @post), method: :post, local: true do |form| %>
+    <%= form.text_area :text, rows: 10, placeholder: 'What do you think about this post ...' %>
+    <%= form.submit "Submit" %>
+  <% end %>
+</div>
