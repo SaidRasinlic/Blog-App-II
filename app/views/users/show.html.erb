@@ -9,12 +9,13 @@
     <% @all_posts.each do |post| %>
       <li>
         <%= render 'posts/post_tile', post: post, user: @user%>
+        <%= render 'posts/most_recent_comments', post: post%>
       </li>
     <%end%>
   </ul>
   <div id="all-posts-btn">
     <%= link_to user_posts_path(@user) do %>
-      <button>See all posts </button>
+      <button>See all posts</button>
     <%end%>
   </div>
 </div>
