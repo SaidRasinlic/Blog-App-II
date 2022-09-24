@@ -1,0 +1,30 @@
+#add-new-page {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#add-new-page form {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#add-new-page input {
+  border: 3px solid black;
+  padding: 15px 10px;
+  font-size: 15px;
+  letter-spacing: 1.2px;
+}
+
+#add-new-page textarea {
+  border: 3px solid black;
+  padding: 15px 10px;
+}
+
+input[type="submit"] {
+  width: 100px;
+}
