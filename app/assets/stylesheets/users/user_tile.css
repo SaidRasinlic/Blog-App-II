@@ -5,16 +5,17 @@
 }
 
 #user-img {
-  width: min-content
+  width: min-content;
 }
 
 #user-img img {
-  aspect-ratio : 1 / 1;
+  aspect-ratio: 1 / 1;
   width: 50%;
   height: 100%;
   min-width: 124px;
   border: 3px solid #000;
   background-color: #000;
+
   /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45); */
 }
 
@@ -22,7 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0px 10%;
+  padding: 0 10%;
   width: 100%;
   border: 3px solid black;
 }

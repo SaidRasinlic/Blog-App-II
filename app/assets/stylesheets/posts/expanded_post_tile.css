@@ -1,9 +1,9 @@
-#expanded-post-tile { 
+#expanded-post-tile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border: 3px solid black;
-  margin: 50px 150px 0px;
+  margin: 50px 150px 0;
   padding: 10px 20px;
 }
 
@@ -12,7 +12,7 @@
   justify-content: space-between;
 }
 
-#comments-likes { 
+#comments-likes {
   display: flex;
 }
 

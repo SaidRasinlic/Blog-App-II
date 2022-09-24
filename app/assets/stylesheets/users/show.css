@@ -37,12 +37,12 @@
   margin: 10px;
 }
 
-#all-posts-btn button:before {
+#all-posts-btn button::before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #f00, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #f00);
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -50,23 +50,11 @@
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
-#all-posts-btn button:active {
-  color: #000
-}
-
-#all-posts-btn button:active:after {
-  background: transparent;
-}
-
-#all-posts-btn button:hover:before {
-  opacity: 1;
-}
-
-#all-posts-btn button:after {
+#all-posts-btn button::after {
   z-index: -1;
   content: '';
   position: absolute;
@@ -76,6 +64,18 @@
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+#all-posts-btn button:active {
+  color: #000;
+}
+
+#all-posts-btn button:active::after {
+  background: transparent;
+}
+
+#all-posts-btn button:hover::before {
+  opacity: 1;
 }
 
 @keyframes glowing {
