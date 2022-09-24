@@ -12,5 +12,8 @@
     <%= link_to new_user_post_comment_path(@user, @post) do %>
       <button class="custom-button">Comment</button>
     <% end %>
+    <%= form_with model: Like.new, url: user_post_likes_path(@user, @post), method: :post do %>
+      <button class="custom-button">Like</button>
+    <% end %>
   </div>
 </div>
