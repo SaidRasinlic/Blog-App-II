@@ -3,8 +3,8 @@
   <div id="post-data">
     <h2>Post #<%= post.id %> by <%= @user.name %></h2>
     <div id="comments-likes">
-      <p>Comments <%= post.comments_counter || 0 %></p>
-      <p>Likes <%= post.likes_counter || 0 %></p>
+      <p>Comments: <%= post.comments_counter || 0 %></p>
+      <p>Likes: <%= post.likes_counter || 0 %></p>
     </div>
   </div>
   <p><%= post.text %></p>
