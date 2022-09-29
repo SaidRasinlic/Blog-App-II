@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @all_posts = @user.posts.includes(:comments).order(created_at: :desc)
+    @all_posts = @user.posts.includes(comments: [:author]).order(created_at: :desc)
   end
 
   def show
     @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
+    @post = Post.includes(comments: [:author]).find(params[:id])
   end
 
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     post = Post.new(params.require(:post).permit(:text, :title))
-    puts post.author_id = @user.id
+    post.author_id = @user.id
     respond_to do |format|
       format.html do
         if post.save
