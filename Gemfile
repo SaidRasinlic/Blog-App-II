@@ -80,3 +80,6 @@ group :development, :test do
 end
 
 gem 'bullet', group: 'development'
+
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
