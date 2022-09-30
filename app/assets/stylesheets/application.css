@@ -126,3 +126,16 @@ a {
   top: 0;
   border-radius: 10px;
 }
+
+.log-out {
+  display: flex;
+  justify-content: center;
+}
+
+.log-out button {
+  color: #fff;
+  background: #000;
+  border: 2px solid rgb(126, 125, 125);
+  padding: 10px;
+  cursor: pointer
+}
