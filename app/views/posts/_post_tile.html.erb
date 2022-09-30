@@ -1,5 +1,5 @@
 <% stylesheet_link_tag 'posts/post_tile' %>
-<%= link_to user_post_path(user, post) do %>
+<%= link_to user_post_path(user, post), id: "post-tile-btn" do %>
   <div id="post-tile">
     <h3>Post #<%= post.id %></h3>
     <p id="post-text"><%= post.text %></p>

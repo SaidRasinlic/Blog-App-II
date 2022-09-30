@@ -78,3 +78,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
 end
+
+gem 'bullet', group: 'development'
+
+# Devise is a flexible authentication solution for Rails based on Warden.
+gem 'devise'
