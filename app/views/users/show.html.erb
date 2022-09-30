@@ -1,6 +1,8 @@
 <% stylesheet_link_tag 'users/show' %>
 <div id="per-user-details">
   <%= render "users/user_tile", user: @user%>
+  <%=form_with model: User.new, url: destroy_user_session_path, method: :delete, html: {class: "log-out"} do %> <button class="custom-button">Sign out</button>
+  <% end %>
   <div class="button-container">
     <%= link_to new_user_post_path(@user) do %>
       <button>Create a new post</button>
@@ -23,6 +25,4 @@
       <button>See all posts</button>
     <%end%>
   </div>
-  <%=form_with model: User.new, url: destroy_user_session_path, method: :delete do %> <button class="custom-button">Sign out</button>
-  <% end %>
 </div>
