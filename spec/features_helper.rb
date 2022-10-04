@@ -5,7 +5,7 @@ module FeaturesHelper
 
   def self.create_and_activate_user(name)
     user = User.create!(
-      name:, bio: "Bio of #{name}", photo: "#{name}.jpg", email: "#{name}@gmail.com", password: "123456"
+      name:, bio: "Bio of #{name}", photo: "#{name}.jpg", email: "#{name}@gmail.com", password: '123456'
     )
     user.save
     user.skip_confirmation!
