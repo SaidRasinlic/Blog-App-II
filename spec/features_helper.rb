@@ -1,9 +1,14 @@
 module FeaturesHelper
+  def self.find_mail_to(email)
+    ActionMailer::Base.deliveries.find { |mail| mail.to.include?(email) }
+  end
+
   def self.create_and_activate_user(name)
     user = User.create!(
-      name:, bio: "Bio of #{name}", photo: "#{name}.jpg"
+      name:, bio: "Bio of #{name}", photo: "#{name}.jpg", email: "#{name}@gmail.com", password: "123456"
     )
     user.save
+    user.skip_confirmation!
     user
   end
 
