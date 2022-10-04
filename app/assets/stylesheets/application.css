@@ -59,13 +59,25 @@ a {
 }
 
 .log-out button {
-  color: #fff;
-  background: #000;
-  border: 2px solid rgb(126, 125, 125);
+  display: inline-block;
+  outline: none;
   cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
   padding: 10px;
+  border: 0;
+  color: #3a4149;
+  background: #e7ebee;
+  line-height: 1.15;
+  font-size: 16px;
 }
 
+.log-out button:hover {
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+}
+
+/* stylelint-disable */
 .button-container button,
 #all-posts-btn button {
   font-size: 13px;
@@ -82,6 +94,7 @@ a {
   border-radius: 10px;
   margin: 10px;
 }
+/* stylelint-enable */
 
 .button-container button::before,
 #all-posts-btn button::before {
@@ -138,4 +151,12 @@ a {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+.alert {
+  border: 3px solid black;
+  margin: 20px 10%;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
 }
