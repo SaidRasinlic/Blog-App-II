@@ -83,3 +83,11 @@ gem 'bullet', group: 'development'
 
 # Devise is a flexible authentication solution for Rails based on Warden.
 gem 'devise'
+
+# CanCanCan is an authorization library for ROR which restricts what resources a given user is allowed to access.
+gem 'cancancan'
+
+# Gemfile
+group :test do
+  gem 'database_cleaner-active_record'
+end

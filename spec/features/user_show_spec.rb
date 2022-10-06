@@ -3,9 +3,25 @@ require_relative '../features_helper'
 
 describe 'User Show', type: :feature do
   before do
-    @name = 'user'
+    @name = 'Tom'
     @user = FeaturesHelper.create_and_activate_user(@name)
     FeaturesHelper.create_posts_for_user(@user, count: 4)
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: 'tom@gmail.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
+
+    mail = FeaturesHelper.find_mail_to 'tom@gmail.com'
+    link = mail.body.raw_source.match(/href="(?<url>.+?)">/)[:url]
+    visit link
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: 'tom@gmail.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
 
     visit user_path(@user)
   end

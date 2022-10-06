@@ -12,6 +12,22 @@ RSpec.describe 'post/show' do
     @post = FeaturesHelper.create_posts_for_user(@user).first
     @comments = FeaturesHelper.create_comments_for_post_by_user(@post, @user, count: 2)
 
+    visit new_user_session_path
+
+    fill_in 'Email', with: 'tom@gmail.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
+
+    mail = FeaturesHelper.find_mail_to 'tom@gmail.com'
+    link = mail.body.raw_source.match(/href="(?<url>.+?)">/)[:url]
+    visit link
+
+    visit new_user_session_path
+
+    fill_in 'Email', with: 'tom@gmail.com'
+    fill_in 'Password', with: '123456'
+    click_button 'Log in'
+
     visit user_post_path(@user, @post)
   end
 
