@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject do
     User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-             bio: 'Teacher from Mexico', posts_counter: 0)
+             bio: 'Teacher from Mexico', posts_counter: 0, email: 'tom@gmail.com', password: '123456')
   end
 
   before { subject.save }
@@ -33,14 +33,14 @@ RSpec.describe User, type: :model do
   end
 
   context 'Call recent posts on a user' do
-    user = User.create(name: 'Test User', posts_counter: 0)
+    user = User.create(name: 'Test User', bio: 'Teacher', posts_counter: 0, email: 'user@gmail.com', password: '123456')
     Post.create(author: user, title: 'Hello', comments_counter: 0, likes_counter: 0)
     Post.create(author: user, title: 'Hello', comments_counter: 0, likes_counter: 0)
     Post.create(author: user, title: 'Hello', comments_counter: 0, likes_counter: 0)
 
     it 'returns the last 3 posts by that user' do
-      recent_posts = user.recent_posts
-      expect(recent_posts.length).to be(3)
+      recent_user_posts = user.recent_posts
+      expect(recent_user_posts.length).to be(3)
     end
   end
 end
