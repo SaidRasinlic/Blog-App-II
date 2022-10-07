@@ -9,6 +9,11 @@
   </div>
   <p><%= post.text %></p>
   <div id="like-n-comment">
+    <% if can? :destroy, @post %>
+      <%= form_with url: user_post_path(@user, @post), method: :delete do %>
+        <button class="custom-button">Delete</button>
+      <% end %>
+    <% end %>
     <%= link_to new_user_post_comment_path(@user, @post) do %>
       <button class="custom-button">Comment</button>
     <% end %>
