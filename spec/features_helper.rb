@@ -18,7 +18,7 @@ module FeaturesHelper
       posts << Post.create!(
         author:,
         title: "Post ##{i}",
-        text: "This is body of post #{i}",
+        text: "Number of posts: #{i + 1}",
         comments_counter: 0,
         likes_counter: 0
       )
@@ -32,7 +32,7 @@ module FeaturesHelper
       comments << Comment.create!(
         author:,
         post:,
-        text: "Comment #{i}"
+        text: "Comments: #{i + 1}"
       )
     end
     comments
