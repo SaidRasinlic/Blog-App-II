@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  
   def index
     @user = User.find(params[:user_id])
     @all_posts = @user.posts.includes(comments: [:author]).order(created_at: :desc)
