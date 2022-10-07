@@ -33,12 +33,13 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 - Clone GitHub repository `gh repo clone SaidRasinlic/Blog-App-II`
-- (git) cd Blog-App
-- Open terminal and run the command *_$irb_* (Interactive Ruby Shell)
+- (git) cd Blog-App-II
+- Open terminal and run the command *_rails c_* (rails console) if you want to interact with the application (manipulating with CRUD operations)
+- To test all of the Unit-Tests run the command *_rspec spec_* to your command-line interface (please navigate to correct project path)
 - Run the program functions, you are ready to start!
 
 
-## Authors
+## Author
 
 👤 **Said Rasinlic**
 

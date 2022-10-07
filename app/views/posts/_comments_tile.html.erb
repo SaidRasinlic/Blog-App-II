@@ -3,7 +3,7 @@
   <ul>
     <% comments.each do |comment| %>
       <li>
-        <p class="commenter"><%= comment.author.name %>:</p>
+        <p class="commenter"><%= comment.author.name  if comment.author%>:</p>
         <p id="comment"><%= comment.text %></p>
       </li>
     <% end %>
