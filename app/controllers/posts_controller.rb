@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def index
     @user = User.find(params[:user_id])
     @all_posts = @user.posts.includes(comments: [:author]).order(created_at: :desc)
@@ -34,13 +35,16 @@ class PostsController < ApplicationController
     end
   end
 
-  def get_user_name(user_id)
-    User.find(user_id).name
-  end
+  def destroy
+    @user = current_user
+    post = Post.find(params[:id])
 
-  def get_all_comments(post_id)
-    Comment.where(post_id:).order(created_at: :desc)
+    if post.destroy
+      flash[:success] = 'Post deleted successfully'
+      redirect_to user_posts_path(@user)
+    else
+      flash.now[:error] = 'Error: Post could not be deleted'
+      redirect_to user_post_path(@user, post)
+    end
   end
-
-  helper_method :get_user_name, :get_all_comments
 end

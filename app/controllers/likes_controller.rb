@@ -7,9 +7,9 @@ class LikesController < ApplicationController
     like.author_id = @user.id
 
     if like.save
-      flash[:success] = 'Like saved successfully'
+      flash[:success] = "Like saved successfully"
     else
-      flash[:error] = 'Error: Like could not be saved'
+      flash[:error] = "Error: Like could not be saved"
     end
     redirect_to user_post_path(@user, @post)
   end
