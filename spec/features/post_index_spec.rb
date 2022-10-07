@@ -14,18 +14,18 @@ RSpec.describe 'post/index', type: :feature do
 
     visit new_user_session_path
 
-    fill_in 'Email', with: 'tom@gmail.com'
-    fill_in 'Password', with: '123456'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
     click_button 'Log in'
 
-    mail = FeaturesHelper.find_mail_to 'tom@gmail.com'
+    mail = FeaturesHelper.find_mail_to @user.email
     link = mail.body.raw_source.match(/href="(?<url>.+?)">/)[:url]
     visit link
 
     visit new_user_session_path
 
-    fill_in 'Email', with: 'tom@gmail.com'
-    fill_in 'Password', with: '123456'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
     click_button 'Log in'
 
     visit user_posts_path(@user.id)
