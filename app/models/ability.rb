@@ -8,9 +8,8 @@ class Ability
     can :read, User
     return unless user.present?
 
-    can :create, Comment
-    can :destroy, Comment, user_id: user.id
-    can :manage, Post, user_id: user.id
+    can :manage, Comment, author_id: user.id
+    can :manage, Post, author_id: user.id
     return unless user.is? :admin
 
     can :manage, :all

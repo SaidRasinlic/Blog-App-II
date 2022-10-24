@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @all_posts = @user.posts.includes(comments: [:author]).order(created_at: :desc)
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @user = current_user
-    post = Post.new(params.require(:post).permit(:text, :title))
+    post = Post.new(post_params)
     post.author_id = @user.id
     respond_to do |format|
       format.html do
@@ -34,13 +36,22 @@ class PostsController < ApplicationController
     end
   end
 
-  def get_user_name(user_id)
-    User.find(user_id).name
+  def destroy
+    @user = current_user
+    post = Post.find(params[:id])
+
+    if post.destroy
+      flash[:success] = 'Post deleted successfully'
+      redirect_to user_posts_path(@user)
+    else
+      flash.now[:error] = 'Error: Post could not be deleted'
+      redirect_to user_post_path(@user, post)
+    end
   end
 
-  def get_all_comments(post_id)
-    Comment.where(post_id:).order(created_at: :desc)
-  end
+  private
 
-  helper_method :get_user_name, :get_all_comments
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end

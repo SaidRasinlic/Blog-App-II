@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def init
     self.posts_counter ||= 0 # will set the default value only if it's nil
   end
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
