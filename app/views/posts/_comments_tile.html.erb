@@ -5,6 +5,14 @@
       <li>
         <p class="commenter"><%= comment.author.name  if comment.author%>:</p>
         <p id="comment"><%= comment.text %></p>
+        <% if @post.present? %>
+          <% if can? :destroy, comment %>
+            <%= form_with url: user_post_comment_path(@user, @post, comment), method: :delete do |f| %>
+              <%= f.button 'Delete', class: 'custom-button' %>
+            <% end %>
+          <% end %>
+        <% end%>
+        <hr id="hr-line"/>
       </li>
     <% end %>
   </ul>
